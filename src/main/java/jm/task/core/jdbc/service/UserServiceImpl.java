@@ -7,40 +7,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+    UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
     public void createUsersTable() {
-        new UserDaoJDBCImpl().cleanUsersTable();
+        userDaoJDBC.createUsersTable();
     }
 
     public void dropUsersTable() {
-        new UserDaoJDBCImpl().dropUsersTable();
+        userDaoJDBC.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.saveUser(name, lastName, age);
         System.out.println("User named " + name + " has been added");
     }
 
     public void removeUserById(long id) {
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
-        userDaoJDBC.getAllUsers();
-        for (User user : users) {
-            System.out.println("ID: " + user.getId());
-            System.out.println("Name: " + user.getName());
-            System.out.println("Last Name: " + user.getLastName());
-            System.out.println("Age: " + user.getAge());
-        }
-        return users;
+        List<User> list = userDaoJDBC.getAllUsers();
+        list.forEach(System.out::println);
+        return list;
     }
 
     public void cleanUsersTable() {
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.cleanUsersTable();
     }
 }

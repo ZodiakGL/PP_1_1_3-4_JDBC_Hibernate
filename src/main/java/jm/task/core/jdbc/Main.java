@@ -10,13 +10,13 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
-        userService.createUsersTable();
-        /*userService.saveUser("Michael", "Jackson", (byte) 50);
+        /*userService.createUsersTable();
+        userService.saveUser("Michael", "Jackson", (byte) 50);
         userService.saveUser("Napoleon", "Bonaparte", (byte) 51);
         userService.saveUser("Nikola", "Tesla", (byte) 86);
         userService.saveUser("Iosif", "Stalin", (byte) 74);
-        userService.getAllUsers();
+        userService.getAllUsers();*//*
         userService.dropUsersTable();
-        userService.cleanUsersTable();*/
+        *//*userService.cleanUsersTable();*/
     }
 }
