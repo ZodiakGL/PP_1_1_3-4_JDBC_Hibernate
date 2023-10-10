@@ -22,8 +22,10 @@ public class Main {
         userService.saveUser("Vova2", "Vova25", (byte) 30);
         userService.saveUser("Vova3", "Vova23", (byte) 20);
         userService.saveUser("Vova32", "Vova213", (byte) 4);
+        userService.removeUserById(3);
         userService.getAllUsers();
         userService.cleanUsersTable();
         userService.dropUsersTable();
+
     }
 }
